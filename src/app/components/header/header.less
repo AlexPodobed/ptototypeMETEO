@@ -1,0 +1,127 @@
+@import url(http://fonts.googleapis.com/css?family=Ubuntu+Condensed|Nunito:400,700);
+
+// font-family: 'Ubuntu Condensed', sans-serif;
+// font-family: 'Nunito', sans-serif;
+
+@iceBlueColor: #00b0CA;
+@headerBgColor: #102840;
+@magentaColor: #ED185F;
+@navbar-default-link-color: #fff;
+
+/*  mixin s */
+
+.logoFont{
+  font-size: 23px;
+  font-family: "Ubuntu Condensed";
+}
+
+.separator{
+  content: "|";
+  position: absolute;
+  color: #fff;
+}
+
+
+
+/* end mixin s*/
+
+.header-container {
+  .navbar-default {
+    background: @headerBgColor;
+    border: none;
+    min-height: 100px;
+
+    .navbar-brand {
+      font-weight: 700;
+      color: #fff;
+      margin-top: 25px;
+      margin-right: 20px;
+      .logoFont;
+
+      img {
+        //height: 100%;
+      }
+
+      span {
+        padding-left: 5px;
+        font-weight: 800;
+        color: @iceBlueColor;
+      }
+    }
+
+    .navbar-nav {
+      &.left-menu {
+        > li > a {
+          &:before {
+            .separator;
+            left: 0;
+          }
+
+        }
+        li:last-child > a {
+          &:after {
+            .separator;
+            right: 0;
+          }
+        }
+
+        > li > a {
+          color: @navbar-default-link-color;
+          padding: 40px 25px 35px 25px;
+          position: relative;
+
+          &:hover,
+          &:focus {
+            color: @iceBlueColor;
+            background-color: @headerBgColor;
+            border-bottom: 5px solid @iceBlueColor;
+          }
+        }
+        > .active > a {
+          &,
+          &:hover,
+          &:focus {
+            color: @magentaColor;
+            background-color: @headerBgColor;
+          }
+        }
+
+      }
+
+
+      &.navbar-right{
+        > li > a{
+          color: @navbar-default-link-color;
+          font-size: 12px;
+          padding: 15px 10px;
+          position: relative;
+
+          &:hover,
+          &:focus {
+            color: @iceBlueColor;
+          }
+
+            &:after{
+            .separator;
+            right: 0;
+          }
+        }
+        >li:last-child{
+          a:after{
+            content: "";
+          }
+        }
+
+        .change-lang{
+          color: @iceBlueColor;
+        }
+      }
+    }
+    // end nav-bar
+
+  }
+  // end navbar-default
+
+}
+
+//end header-container
