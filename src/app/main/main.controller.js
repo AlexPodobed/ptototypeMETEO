@@ -58,6 +58,9 @@ angular.module('prototype')
         'logo': 'less.png'
       }
     ];
+
+
+
     angular.forEach($scope.awesomeThings, function(awesomeThing) {
       awesomeThing.rank = Math.random();
     });

@@ -1,9 +1,9 @@
 @import url(http://fonts.googleapis.com/css?family=Ubuntu+Condensed|Nunito:400,700);
 
-@iceBlueColor: #00b0CA;
-@headerBgColor: #102840;
-@magentaColor: #ED185F;
-@navbar-default-link-color: #fff;
+@color-ice-blue: #00b0CA;
+@color-deep-blue: #102840;
+@color-magenta: #ED185F;
+@color-white: #fff;
 
 /*  mixin s */
 
@@ -35,7 +35,7 @@ body {
 
 .header-container {
   .navbar-default {
-    background: @headerBgColor;
+    background: @color-deep-blue;
     border: none;
     border-radius: 0;
     min-height: 100px;
@@ -55,7 +55,7 @@ body {
       span {
         padding-left: 5px;
         font-weight: 800;
-        color: @iceBlueColor;
+        color: @color-ice-blue;
       }
     }
 
@@ -66,8 +66,15 @@ body {
         .navbar-right {
           margin-right: 0;
 
-          li > a {
-            padding-bottom: 5px;
+          li {
+            > a {
+              padding-bottom: 5px;
+            }
+
+            &.active a{
+              background-color: @color-deep-blue;
+              color: @color-ice-blue;
+            }
           }
         }
       }
@@ -90,26 +97,25 @@ body {
         }
 
         > li > a {
-          color: @navbar-default-link-color;
+          color: @color-white;
           padding: 0 25px 35px 25px;
           position: relative;
 
-          &:hover,
-          &:focus {
-            color: @iceBlueColor;
-            background-color: @headerBgColor;
-            border-bottom: 5px solid @iceBlueColor;
+          &:hover {
+            color: @color-ice-blue;
+            background-color: @color-deep-blue;
+            border-bottom: 5px solid @color-ice-blue;
           }
         }
         > .active > a {
           &,
           &:hover,
           &:focus {
-            color: @magentaColor;
-            background-color: @headerBgColor;
+            color: @color-magenta;
+            background-color: @color-deep-blue;
           }
           &:hover {
-            border-bottom-color: @magentaColor;
+            border-bottom-color: @color-magenta;
           }
         }
 
@@ -117,14 +123,14 @@ body {
 
       &.navbar-right {
         > li > a {
-          color: @navbar-default-link-color;
+          color: @color-white;
           font-size: 12px;
           padding: 15px 10px;
           position: relative;
 
           &:hover,
           &:focus {
-            color: @iceBlueColor;
+            color: @color-ice-blue;
           }
 
           &:after {
@@ -139,7 +145,7 @@ body {
         }
 
         .change-lang {
-          color: @iceBlueColor;
+          color: @color-ice-blue;
         }
       }
     } // end nav-bar
@@ -148,12 +154,12 @@ body {
 
 }
 
-.footer {
+.footer-container {
   position: absolute;
   bottom: 0;
   width: 100%;
   height: 50px;
-  background: @headerBgColor;
+  background: @color-deep-blue;
 
   ul {
     margin: 15px 0;
@@ -175,13 +181,13 @@ body {
 
         &:hover,
         &:focus {
-          color: @iceBlueColor;
+          color: @color-ice-blue;
         }
       }
 
       &.active {
         a {
-          color: @iceBlueColor;
+          color: @color-ice-blue;
         }
       }
 
