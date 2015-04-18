@@ -15,12 +15,14 @@
 .login-container{
   color: #fff;
   position: fixed;
+  top: 0; bottom: 0;
+  left: 0; right: 0;
   z-index: 1000;
-  width: 100%;
+//  width: 100%;
 
 
   .login-box{
-    margin: 0 auto;
+//    margin: 0 auto;
     width: 700px;
     min-height: 550px;
     background: @color-deep-blue;
@@ -28,7 +30,11 @@
     box-shadow: 0 0 30px #000;
     border: 1px solid #0B1E30;
 
-
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    margin-top: -275px;
+    margin-left: -350px;
 
     .row > div{
       padding: 10px 0;
