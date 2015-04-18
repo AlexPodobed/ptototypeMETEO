@@ -1,29 +1,140 @@
+@import url(http://fonts.googleapis.com/css?family=Ubuntu+Condensed|Nunito:400,700);
+
+
 @color-ice-blue: #00b0CA;
 @color-deep-blue: #102840;
 
+
+
+.logoFont {
+  font-family: "Ubuntu Condensed";
+  font-weight: bold;
+
+}
+
 .login-container{
   color: #fff;
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
 
-  .container{
-    outline: 1px solid red;
-  }
 
   .login-box{
     margin: 0 auto;
     width: 700px;
+    min-height: 550px;
     background: @color-deep-blue;
     padding: 30px 120px;
+    box-shadow: 0 0 30px #000;
+    border: 1px solid #0B1E30;
 
-    h3{
+
+
+    .row > div{
+      padding: 10px 0;
+    }
+
+    .row .heading{
+      margin-top: 0;
+      h3 {
+        margin: 0;
+      }
+    }
+
+
+    .blue-text{
       color: @color-ice-blue;
     }
 
     .logo-section{
-      img{
-        margin-left: -75px;
-        width: 100%;
+
+      h2{
+        .logoFont;
+        position: relative;
+        margin: 0;
+        font-size: 30px;
+
+        img{
+          position: absolute;
+          left: -50px;
+          width: 45px;
+        }
       }
     }
 
+    .form-section{
+      .btn{
+        color: #00A6CB;
+        font-weight: bold;
+        padding: 8px 20px;
+        font-size: 16px;
+      }
+      .form-horizontal .control-label{
+        text-align: left;
+      }
+
+      .form-control{
+        border-radius: 0;
+      }
+
+      label{
+        font-weight: 200;
+      }
+
+    }
+
+    .question-section{
+      a{
+        color: @color-ice-blue;
+        text-decoration: underline;
+
+        &:hover,&:focus{
+          color: #0094A9;
+        }
+      }
+    }
+  }
+}
+.dark-bg{
+  position: fixed;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  background: #000000;
+  opacity: 0.5;
+}
+
+
+@media (min-width: 768px) {
+  .login-container{
+    .login-box{
+      .form-section{
+        .col-sm-8{
+          padding-left: 0;
+        }
+      }
+    }
+  }
+}
+
+
+@media (max-width: 768px) {
+  .login-container{
+    .login-box{
+      width: 100%;
+      padding: 20px 60px;
+
+
+      .logo-section{
+        h2 img{
+          left: -40px;
+          top: 3px;
+          width: 35px;
+
+        }
+      }
+    }
   }
 }
