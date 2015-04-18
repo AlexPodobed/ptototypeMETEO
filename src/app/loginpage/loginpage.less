@@ -9,16 +9,13 @@
 .logoFont {
   font-family: "Ubuntu Condensed";
   font-weight: bold;
-
 }
 
 .login-container{
   color: #fff;
-  position: fixed;
-  top: 0; bottom: 0;
-  left: 0; right: 0;
-  z-index: 1000;
 //  width: 100%;
+  position: relative;
+  z-index: 999;
 
 
   .login-box{
@@ -30,17 +27,12 @@
     box-shadow: 0 0 30px #000;
     border: 1px solid #0B1E30;
 
-    position: fixed;
-    left: 50%;
-    top: 50%;
-    margin-top: -275px;
-    margin-left: -350px;
 
     .row > div{
       padding: 10px 0;
     }
 
-    .row .heading{
+    .row .heading-section{
       margin-top: 0;
       h3 {
         margin: 0;
@@ -86,7 +78,13 @@
       label{
         font-weight: 200;
       }
-
+      input[type="checkbox"]:checked + label::before {
+        background-color: @color-deep-blue;
+        border-color: #fff;
+      }
+      .checkbox label::after{
+        color: #fff;
+      }
     }
 
     .question-section{
@@ -100,7 +98,14 @@
       }
     }
   }
+
+
 }
+
+.has-error .form-control{
+  background: #ffab97;
+}
+
 .dark-bg{
   position: fixed;
   top:0;
@@ -112,10 +117,33 @@
   opacity: 0.5;
 }
 
+.checkbox input[type=checkbox]:checked + label:after {
+  font-family: 'Glyphicons Halflings';
+  content: "\e013";
+}
+.checkbox label:after {
+  padding-left: 4px;
+  padding-top: 2px;
+  font-size: 9px;
+}
+
 
 @media (min-width: 768px) {
   .login-container{
+    position: fixed;
+    top: 0; bottom: 0;
+    left: 0; right: 0;
+    z-index: 1000;
+
+
     .login-box{
+      position: fixed;
+      left: 50%;
+      top: 50%;
+      margin-top: -275px;
+      margin-left: -350px;
+
+
       .form-section{
         .col-sm-8{
           padding-left: 0;
@@ -123,11 +151,15 @@
       }
     }
   }
+
 }
 
 
 @media (max-width: 768px) {
   .login-container{
+    padding-top: 15px;
+    padding-bottom: 15px;
+
     .login-box{
       width: 100%;
       padding: 20px 60px;
